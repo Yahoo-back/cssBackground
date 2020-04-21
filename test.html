@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+</head>
+<style>
+    div{
+        margin-top: 50px;
+    }
+    /* 圆角边框 */
+    .container{
+        text-align: center;
+        border: 10px solid transparent;
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 200px;
+        padding: 20px; 
+        border-radius: 10px;
+        border: 5px solid;
+        margin: 0 0 30px 0;
+        position: relative;
+        box-sizing:border-box;
+        border:7px solid transparent;
+        background-clip:padding-box,border-box;
+        background-origin:padding-box,border-box;
+        /* 前面为背景色，后面是边框颜色从上到下 */
+        background-image:linear-gradient(#cac3ff,#cac3ff),linear-gradient(#a149f7,#784eff);
+    }
+    /* 圆角边框 */
+    .containers{
+        text-align: center;
+        border: 10px solid transparent;
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 200px;
+        padding: 20px; 
+        border-radius: 10px;
+        border: 5px solid;
+        margin: 0 0 30px 0;
+        position: relative;
+        box-sizing:border-box;
+        border:7px solid transparent;
+        background-clip:padding-box,border-box;
+        background-origin:padding-box,border-box;
+        /* 前面为背景色，后面是边框颜色从上到下 */
+        background-image:linear-gradient(#cac3ff,#8176db),linear-gradient(#a149f7,#784eff);
+    }
+    /* 不规则阴影 */
+    .irregular{
+        position: relative;
+        width: 200px;
+        height: 100px;
+        margin: 20px;
+        color: #000;
+        background: #cac3ff;
+        border-radius: 5px;
+        filter: drop-shadow(2px 2px 10px rgba(0,0,0,.5));
+    }
+    .irregular:after{
+        content: '';
+        position: absolute;
+        top: 0.5em;
+        right: -1em;
+        width: 0;
+        height: 0;
+        border: 1em solid transparent;
+        border-left-color: #8176db;
+        border-right-width: 0;
+    }
+    /* 折角 */
+    .triangle{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background:linear-gradient(-150deg,transparent 1.5em ,cyan 0);
+        border-radius: .5em;
+    }
+    .triangle:after{
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1.73em;
+        height: 3em;
+        background: linear-gradient(to left bottom,transparent 50%,red 0);
+        transform: translateY(-11em) rotate(-30deg);
+        transform-origin: bottom right;
+        border-bottom-left-radius: inherit;
+    }
+    .transBorder{
+        border: 10px solid rgba(255,255,255,.5);
+        background: white;
+        background-clip: padding-box;
+    }
+    .transBorderP{
+        margin-top: 50px;
+        background:linear-gradient(to right , red , blue , yellow , blue)
+    }
+    .bgPosition{
+        height: 200px;
+        padding: 10px;
+        border-radius: 5px solid #8176db;
+        background: cyan radial-gradient(#00a4fd, cyan) no-repeat right 100px bottom / 100px 100px;
+        background-origin: content-box;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h4>圆角边框</h4>
+        <div>边框颜色渐变，边框内背景色</div>
+    </div>
+    <div class="containers">
+        <h4>圆角边框</h4>
+        <div>边框颜色渐变，边框内背景色也可以设置渐变</div>
+    </div>
+    <div class="irregular">
+        <h4>不规则投影</h4>
+        <div></div>
+    </div>
+    <div class="triangle">
+        <h4>折角</h4>
+        <div>关键实现：线性渐变
+            具体分析：150deg 是为了形成30度角，方便利用勾股定理测出各种长度</div>
+    </div>
+    <div class="transBorderP">
+        <div class="transBorder">
+            <h4>背景半透明边框：background-clip</h4>
+        </div>
+    </div>
+    <div class="bgPosition">
+        <h4>灵活背景定位：background-position、background-origin</h4>
+    </div>
+</body>
+
+</html>
