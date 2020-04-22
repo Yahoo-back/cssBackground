@@ -95,6 +95,7 @@
         transform-origin: bottom right;
         border-bottom-left-radius: inherit;
     }
+    /* 背景半透明 */
     .transBorder{
         border: 10px solid rgba(255,255,255,.5);
         background: white;
@@ -104,12 +105,52 @@
         margin-top: 50px;
         background:linear-gradient(to right , red , blue , yellow , blue)
     }
+    /* 灵活背景 */
     .bgPosition{
         height: 200px;
         padding: 10px;
         border-radius: 5px solid #8176db;
         background: cyan radial-gradient(#00a4fd, cyan) no-repeat right 100px bottom / 100px 100px;
         background-origin: content-box;
+    }
+    /* 条纹背景 */
+    .bgtw{
+        height: 200px;
+        background: linear-gradient(#fb3 50%,#58a 0);
+        background-size: 100% 30px;
+    }
+    /* 斜条纹背景 */
+    .bgxtw{
+        height: 200px;
+        background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+        background-size: 100% 30px;
+        /* background-size: 30px 30px; */
+    }
+       /* 斜条纹背景 */
+    .bgxtw1{
+        height: 200px;
+        background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+        background-size: 30px 30px;
+    }
+    /* 斜条纹无缝连接 */
+    .bgxtwwf{
+        height: 200px;
+        background: repeating-linear-gradient(60deg, #fb3 0, #fb3 15px, #58a 0, #58a 30px);
+    }
+    /* 网格 */
+    .wg{
+        height: 200px;
+        background: #58a;
+        background-image: linear-gradient(white 1px, transparent 0),linear-gradient(to right, white 1px, transparent 0);
+        background-size: 30px 30px;
+    }
+    /* 波点 */
+    .bd{
+        height: 200px;
+        background:radial-gradient(tan 30%, transparent 0),radial-gradient(tan 30%, transparent 0);
+        background-color: #666;
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
     }
 </style>
 
@@ -138,6 +179,24 @@
     </div>
     <div class="bgPosition">
         <h4>灵活背景定位：background-position、background-origin</h4>
+    </div>
+    <div class="bgtw">
+        <h4>背景条纹：background-image</h4>
+    </div>
+    <div class="bgxtw">
+        <h4>背景斜条纹：background-image</h4>
+    </div>
+    <div class="bgxtw1">
+        <h4>背景斜条纹：background-image</h4>
+    </div>
+    <div class="bgxtwwf">
+        <h4>背景斜条纹无缝：background-image</h4>
+    </div>
+    <div class="wg">
+        <h4>网格：background-size</h4>
+    </div>
+    <div class="bd">
+        <h4>波点：background-size</h4>
     </div>
 </body>
 
